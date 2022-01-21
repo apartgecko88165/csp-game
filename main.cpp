@@ -7,6 +7,14 @@
 
 int score;
 
+// function to load textures
+Texture2D loadTxtr(txtr)
+{
+    texture = LoadTexture(txtr);
+    std::cout << "[TEXTURE@ << txtr << "] - Initialized" << std::endl;
+    return texture;
+}
+
 int main()
 {
     // Initialization
@@ -24,7 +32,7 @@ int main()
         {0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 0, 0}
-    };
+    }; 
 
      // multi-dimensional array that represents possible shrimp spawning locations
     bool baseShrimp[10][6] = {
@@ -52,10 +60,10 @@ int main()
     InitWindow(screenWidth, screenHeight, "River Game");    
 
     // load the textures for the fish, rocks, shrimp, and waves
-    Texture2D fishTxtr = LoadTexture("sprites/fish.png");                      //
-    Texture2D rockTxtr = LoadTexture("sprites/rock.png");  
-    Texture2D shrimpTxtr = LoadTexture("sprites/shrimp.png");  
-    Texture2D wavesTxtr = LoadTexture("sprites/waves.png");
+    Texture2D fishTxtr = loadTxtr("sprites/fish.png");                      //
+    Texture2D rockTxtr = loadTxtr("sprites/rock.png");  
+    Texture2D shrimpTxtr = loadTxtr("sprites/shrimp.png");  
+    Texture2D wavesTxtr = loadTxtr("sprites/waves.png");
 
     // vector to represent the relative position of the player
     Vector2 playerPosition = { (float)screenWidth/2, (float)screenHeight/2 };
